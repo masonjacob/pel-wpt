@@ -8,12 +8,12 @@ G_H2 = 4
 G_L2 = 17 
 
 gpio.setmode(gpio.BCM)
-gpio.setup(G_H1, gpio.out)
-gpio.setup(G_L1, gpio.out)
-gpio.setup(G_H2, gpio.out)
-gpio.setup(G_L2, gpio.out)
+gpio.setup(G_H1, gpio.OUT)
+gpio.setup(G_L1, gpio.OUT)
+gpio.setup(G_H2, gpio.OUT)
+gpio.setup(G_L2, gpio.OUT)
 
-frequency = 100000  # 100kHz
+frequency = 10000  # 100kHz
 
 try:
     while True:
