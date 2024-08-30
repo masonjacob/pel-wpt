@@ -97,6 +97,7 @@ L_S = readtable('L Table Seawater.csv');
 L_A = readtable('L Table Air.csv');
 
 
+ 
 idx = (L_A.slide == 0 & L_A.gap == 100);
 plot_1 = L_A(idx,:);
 idx = (L_A.slide == 0 & L_A.gap == 140);
@@ -109,6 +110,10 @@ idx = (L_S.slide == 0 & L_S.gap == 140);
 plot_5 = L_S(idx,:);
 idx = (L_S.slide == 0 & L_S.gap == 180);
 plot_6 = L_S(idx,:);
+x = [-20,-10,0,10,20]
+plot_7 = [4.3786,4.3566,4.3467,4.3566,4.3786]
+plot_8 = [2.1123,2.1343,2.1405,2.1343,2.1123]
+plot_9 = [1.1461,1.1698,1.1771,1.1698,1.1461]
 
 plot(plot_1, "misalignment", "mutual_inductance")
 hold on;
@@ -121,10 +126,16 @@ hold on;
 plot(plot_5, "misalignment", "mutual_inductance")
 hold on;
 plot(plot_6, "misalignment", "mutual_inductance")
+hold on;
+plot(x,plot_7)
+hold on; 
+plot(x,plot_8)
+hold on;
+plot(x,plot_9)
 title("RX Misalignment v.s. Mutual Inductance at Multiple Gap Distances For Air and Seawater")
 xlabel("RX Misalignment (deg)")
 ylabel("Mutual Inductance (nH)")
-legend('100mm Air Gap', '140mm Air Gap', '180mm Air Gap','100mm Seatwater Gap', '140mm Seawater Gap', '180mm Seawater Gap')
+legend('100mm Air Gap', '140mm Air Gap', '180mm Air Gap','100mm Seatwater Gap', '140mm Seawater Gap', '180mm Seawater Gap',"100mm Gap (Neumann's)", "140mm Gap (Neumann's)", "180mm Gap (Neumann's)")
 
 % plot(x, y, 'ksquare', 'MarkerSize', 10); % Plot training data.
 % hold on;
