@@ -26,6 +26,10 @@ d = 0.1
 alpha = 0
 theta = 0.5
 omega = 0.5
-func = (r_1 * r_2  * ((np.sin(theta) * np.sin(omega)) + (np.cos(alpha) * np.cos(theta) * np.cos(omega))) / np.sqrt((r_1 * np.cos(theta) - r_2 * np.cos(omega))^2 + (r_1 * np.sin(theta) - r_2 * np.sin(omega) * np.cos(alpha) - c)^2 +(r_2 * np.sin(omega) * np.sin(alpha) - d)^2))
+func = (r_1 * r_2 * ((np.sin(theta) * np.sin(omega)) + (np.cos(alpha) * np.cos(theta) * np.cos(omega))) /
+        np.sqrt((r_1 * np.cos(theta) - r_2 * np.cos(omega))**2 +
+                (r_1 * np.sin(theta) - r_2 * np.sin(omega) * np.cos(alpha) - c)**2 +
+                (r_2 * np.sin(omega) * np.sin(alpha) - d)**2))
+
 coefficent = (N_1 * N_2 * μ_0) / (4 * np.pi)
 print(dblquad(lambda theta, omega: func , 0, 2 * np.pi, lambda theta: 0, lambda theta: 2 * np.pi))
